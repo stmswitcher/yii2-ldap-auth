@@ -1,0 +1,23 @@
+{
+  "name": "stmswitcher/yii2-ldap-auth",
+  "license": "MIT",
+  "description": "Simple library to handle auth over LDAP in Yii 2 applications.",
+  "keywords": ["yii2", "extension", "ldap", "auth"],
+  "type": "yii2-extension",
+  "require": {
+    "php": ">= 7.3",
+    "ext-ldap": "*",
+    "yiisoft/yii2": "~2.0.14"
+  },
+  "authors": [
+    {
+      "name": "Denis Alexandrov",
+      "email": "stm.switcher@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "stmswitcher\\Yii2LdapAuth\\": "src/"
+    }
+  }
+}
