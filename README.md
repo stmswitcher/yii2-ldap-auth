@@ -52,7 +52,7 @@ public function validatePassword($attribute, $params)
     if (!$this->hasErrors()) {
         $user = LdapUser::findIdentity($this->username);
 
-        if (!$user || !Yii::$app->ldapAuth->authenticate($user->getDn(), $this->password) {
+        if (!$user || !Yii::$app->ldapAuth->authenticate($user->getDn(), $this->password)) {
             $this->addError($attribute, 'Incorrect username or password.');
         }
     }
