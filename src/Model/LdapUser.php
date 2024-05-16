@@ -143,19 +143,17 @@ class LdapUser extends BaseObject implements IdentityInterface
 
     /**
      * {@inheritDoc}
-     * @throws Yii2LdapAuthException
      */
     public function getAuthKey()
     {
-        throw new Yii2LdapAuthException('Auth keys are not supported');
+        return hash('sha256', $this->id);
     }
 
     /**
      * {@inheritDoc}
-     * @throws Yii2LdapAuthException
      */
     public function validateAuthKey($authKey)
     {
-        throw new Yii2LdapAuthException('Auth keys are not supported');
+        return $authKey === hash('sha256', $this->id);
     }
 }
